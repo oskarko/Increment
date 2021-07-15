@@ -11,6 +11,8 @@
 		E2DD5C8826A06910005A3102 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DD5C8726A06910005A3102 /* LandingView.swift */; };
 		E2DD5C8A26A06912005A3102 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2DD5C8926A06912005A3102 /* Assets.xcassets */; };
 		E2DD5C8D26A06912005A3102 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2DD5C8C26A06912005A3102 /* Preview Assets.xcassets */; };
+		E2DD5C9526A06D1A005A3102 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DD5C9426A06D1A005A3102 /* PrimaryButtonStyle.swift */; };
+		E2DD5C9726A06D89005A3102 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DD5C9626A06D89005A3102 /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		E2DD5C8926A06912005A3102 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2DD5C8C26A06912005A3102 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E2DD5C8E26A06912005A3102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2DD5C9426A06D1A005A3102 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		E2DD5C9626A06D89005A3102 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 				E2DD5C8926A06912005A3102 /* Assets.xcassets */,
 				E2DD5C8E26A06912005A3102 /* Info.plist */,
 				E2DD5C8B26A06912005A3102 /* Preview Content */,
+				E2DD5C9426A06D1A005A3102 /* PrimaryButtonStyle.swift */,
+				E2DD5C9626A06D89005A3102 /* Color+Extension.swift */,
 			);
 			path = Increment;
 			sourceTree = "<group>";
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2DD5C9526A06D1A005A3102 /* PrimaryButtonStyle.swift in Sources */,
 				E2DD5C8826A06910005A3102 /* LandingView.swift in Sources */,
 				E2DD5C8626A06910005A3102 /* IncrementApp.swift in Sources */,
+				E2DD5C9726A06D89005A3102 /* Color+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
