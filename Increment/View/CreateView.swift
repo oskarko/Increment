@@ -21,6 +21,21 @@ struct CreateView: View {
         }
     }
     
+    var actionSheet: ActionSheet {
+        ActionSheet(
+            title: Text("Select"),
+            buttons: viewModel.displayOptions.indices.map { index in
+                
+                let option = viewModel.displayOptions[index]
+                
+                return .default(
+                    Text(option.formatted)
+                ) {
+                    viewModel.send(action: .selectOption(index: index))
+                }
+            })
+    }
+    
     // MARK: - Body
     
     var body: some View {
@@ -38,6 +53,14 @@ struct CreateView: View {
                     }
                 }
             } // VStack
+            .actionSheet(
+                isPresented: Binding<Bool>(
+                    get: {
+                        viewModel.hasSelectedDropdown
+                    },
+                    set: { _ in })) {
+                        actionSheet
+                    }
             .navigationBarTitle("Create")
             .navigationBarBackButtonHidden(true)
             .padding(.bottom, 15)
