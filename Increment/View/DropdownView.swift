@@ -9,21 +9,25 @@
 
 import SwiftUI
 
-struct DropdownView: View {
+struct DropdownView<T: DropdownItemProtocol>: View {
     // MARK: - Properties
+    
+    @Binding var viewModel: T
     
     // MARK: - Body
     
     var body: some View {
         VStack {
             HStack {
-                Text("Excercise")
+                Text(viewModel.headerTitle)
                     .font(.system(size: 22, weight: .semibold))
                 Spacer()
             } // HStack
-            Button(action: {}) {
+            Button(action: {
+                viewModel.isSelected = true
+            }) {
                 HStack {
-                    Text("Pushups")
+                    Text(viewModel.dropdownTitle)
                         .font(.system(size: 28, weight: .semibold))
                     Spacer()
                     Image(systemName: "arrowtriangle.down.circle")
@@ -38,18 +42,18 @@ struct DropdownView: View {
 
 // MARK: - Preview
 
-struct DropdownView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            DropdownView()
-                .previewLayout(.sizeThatFits)
-        }
-        .environment(\.colorScheme, .light) // default
-        
-        NavigationView {
-            DropdownView()
-                .previewLayout(.sizeThatFits)
-        }
-        .environment(\.colorScheme, .dark)
-    }
-}
+//struct DropdownView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        NavigationView {
+//            DropdownView()
+//                .previewLayout(.sizeThatFits)
+//        }
+//        .environment(\.colorScheme, .light) // default
+//        
+//        NavigationView {
+//            DropdownView()
+//                .previewLayout(.sizeThatFits)
+//        }
+//        .environment(\.colorScheme, .dark)
+//    }
+//}
