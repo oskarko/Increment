@@ -15,24 +15,12 @@ struct CreateView: View {
     @StateObject var viewModel = CreateChallengeViewModel()
     
     var dropdownList: some View {
-        ForEach(viewModel.dropdowns.indices, id: \.self) { index in
-            DropdownView(viewModel: $viewModel.dropdowns[index])
+        Group {
+            DropdownView(viewModel: $viewModel.exerciseDropdown)
+            DropdownView(viewModel: $viewModel.startAmountDropdown)
+            DropdownView(viewModel: $viewModel.increaseDropdown)
+            DropdownView(viewModel: $viewModel.lengthDropdown)
         }
-    }
-    
-    var actionSheet: ActionSheet {
-        ActionSheet(
-            title: Text("Select"),
-            buttons: viewModel.displayOptions.indices.map { index in
-                
-                let option = viewModel.displayOptions[index]
-                
-                return .default(
-                    Text(option.formatted)
-                ) {
-                    viewModel.send(action: .selectOption(index: index))
-                }
-            })
     }
     
     // MARK: - Body
@@ -51,14 +39,6 @@ struct CreateView: View {
                     }
 
             } // VStack
-            .actionSheet(
-                isPresented: Binding<Bool>(
-                    get: {
-                        viewModel.hasSelectedDropdown
-                    },
-                    set: { _ in })) {
-                        actionSheet
-                    }
             .navigationBarTitle("Create")
             .navigationBarBackButtonHidden(true)
             .padding(.bottom, 15)
