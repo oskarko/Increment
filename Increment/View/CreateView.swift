@@ -13,7 +13,6 @@ struct CreateView: View {
     // MARK: - Properties
     
     @StateObject var viewModel = CreateChallengeViewModel()
-    @State private var isActive: Bool = false
     
     var dropdownList: some View {
         ForEach(viewModel.dropdowns.indices, id: \.self) { index in
@@ -43,15 +42,14 @@ struct CreateView: View {
             VStack {
                 dropdownList
                 Spacer()
-                NavigationLink(
-                    destination: RemindView(),
-                    isActive: $isActive
-                ) {
-                    Button(action: {}) {
+                
+                    Button(action: {
+                        viewModel.send(action: .createChallenge)
+                    }) {
                         Text("Next")
                             .font(.system(size: 24, weight: .medium))
                     }
-                }
+
             } // VStack
             .actionSheet(
                 isPresented: Binding<Bool>(
