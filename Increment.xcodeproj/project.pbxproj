@@ -12,6 +12,7 @@
 		E203629826A5A87800AA4EEC /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E203629726A5A87800AA4EEC /* UserService.swift */; };
 		E22B75F626A5C7630051BD63 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22B75F526A5C7630051BD63 /* Challenge.swift */; };
 		E22B75F826A5C8050051BD63 /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22B75F726A5C8050051BD63 /* ChallengeService.swift */; };
+		E22B75FB26A5CD370051BD63 /* IncrementError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22B75FA26A5CD370051BD63 /* IncrementError.swift */; };
 		E2DD5C8626A06910005A3102 /* IncrementApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DD5C8526A06910005A3102 /* IncrementApp.swift */; };
 		E2DD5C8826A06910005A3102 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DD5C8726A06910005A3102 /* LandingView.swift */; };
 		E2DD5C8A26A06912005A3102 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2DD5C8926A06912005A3102 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		E203629726A5A87800AA4EEC /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		E22B75F526A5C7630051BD63 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		E22B75F726A5C8050051BD63 /* ChallengeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeService.swift; sourceTree = "<group>"; };
+		E22B75FA26A5CD370051BD63 /* IncrementError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncrementError.swift; sourceTree = "<group>"; };
 		E2DD5C8226A06910005A3102 /* Increment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Increment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2DD5C8526A06910005A3102 /* IncrementApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncrementApp.swift; sourceTree = "<group>"; };
 		E2DD5C8726A06910005A3102 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		E22B75F926A5CD250051BD63 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E22B75FA26A5CD370051BD63 /* IncrementError.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		E2DD5C7926A06910005A3102 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +132,7 @@
 				E2DD5C9826A0728A005A3102 /* View */,
 				E2DD5C9B26A072B6005A3102 /* Style */,
 				E2DD5C9A26A072A0005A3102 /* Extension */,
+				E22B75F926A5CD250051BD63 /* Utils */,
 				E2DD5C8926A06912005A3102 /* Assets.xcassets */,
 				E2DD5C8E26A06912005A3102 /* Info.plist */,
 				E203629426A5A3ED00AA4EEC /* GoogleService-Info.plist */,
@@ -308,6 +319,7 @@
 				E22B75F826A5C8050051BD63 /* ChallengeService.swift in Sources */,
 				E2DD5C9D26A07338005A3102 /* CreateView.swift in Sources */,
 				E2DD5C9F26A073D4005A3102 /* DropdownView.swift in Sources */,
+				E22B75FB26A5CD370051BD63 /* IncrementError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
