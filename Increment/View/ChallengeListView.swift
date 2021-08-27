@@ -17,7 +17,21 @@ struct ChallengeListView: View {
     // MARK: - Body
     
     var body: some View {
-        Text("ChallengeListView")
+        ScrollView {
+            
+            VStack {
+                
+                LazyVGrid(columns: [.init(.flexible()), .init(.flexible())]) {
+                    ForEach(viewModel.itemViewModels, id: \.self) { viewModel in
+                        ChallengeItemView(viewModel: viewModel)
+                    }
+                } // LazyVGrid
+                Spacer()
+                
+            } // VStack
+            
+        } // ScrollView
+        .navigationTitle(viewModel.title)
     }
 }
 
