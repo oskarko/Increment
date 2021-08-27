@@ -13,6 +13,8 @@
 		E22B75F626A5C7630051BD63 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22B75F526A5C7630051BD63 /* Challenge.swift */; };
 		E22B75F826A5C8050051BD63 /* ChallengeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22B75F726A5C8050051BD63 /* ChallengeService.swift */; };
 		E22B75FB26A5CD370051BD63 /* IncrementError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22B75FA26A5CD370051BD63 /* IncrementError.swift */; };
+		E243073126D8E7AF0075DE3A /* TabContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E243073026D8E7AF0075DE3A /* TabContainerView.swift */; };
+		E243298026B0047A00A1BFAA /* AuthPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E243297F26B0047A00A1BFAA /* AuthPublisher.swift */; };
 		E2DD5C8626A06910005A3102 /* IncrementApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DD5C8526A06910005A3102 /* IncrementApp.swift */; };
 		E2DD5C8826A06910005A3102 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DD5C8726A06910005A3102 /* LandingView.swift */; };
 		E2DD5C8A26A06912005A3102 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2DD5C8926A06912005A3102 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 		E22B75F526A5C7630051BD63 /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
 		E22B75F726A5C8050051BD63 /* ChallengeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeService.swift; sourceTree = "<group>"; };
 		E22B75FA26A5CD370051BD63 /* IncrementError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncrementError.swift; sourceTree = "<group>"; };
+		E243073026D8E7AF0075DE3A /* TabContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainerView.swift; sourceTree = "<group>"; };
+		E243297F26B0047A00A1BFAA /* AuthPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPublisher.swift; sourceTree = "<group>"; };
 		E2DD5C8226A06910005A3102 /* Increment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Increment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2DD5C8526A06910005A3102 /* IncrementApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncrementApp.swift; sourceTree = "<group>"; };
 		E2DD5C8726A06910005A3102 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
@@ -104,6 +108,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		E243297E26B0044700A1BFAA /* Publishers */ = {
+			isa = PBXGroup;
+			children = (
+				E243297F26B0047A00A1BFAA /* AuthPublisher.swift */,
+			);
+			path = Publishers;
+			sourceTree = "<group>";
+		};
 		E2DD5C7926A06910005A3102 = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +137,7 @@
 		E2DD5C8426A06910005A3102 /* Increment */ = {
 			isa = PBXGroup;
 			children = (
+				E243297E26B0044700A1BFAA /* Publishers */,
 				E22B75F426A5C7570051BD63 /* Models */,
 				E203629626A5A85200AA4EEC /* Services */,
 				E2DD5C9926A07293005A3102 /* App */,
@@ -156,6 +169,7 @@
 				E2DD5C9E26A073D4005A3102 /* DropdownView.swift */,
 				E2DD5C8726A06910005A3102 /* LandingView.swift */,
 				E2DD5CA026A077E7005A3102 /* RemindView.swift */,
+				E243073026D8E7AF0075DE3A /* TabContainerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -307,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E243298026B0047A00A1BFAA /* AuthPublisher.swift in Sources */,
 				E2DD5C9526A06D1A005A3102 /* PrimaryButtonStyle.swift in Sources */,
 				E2DD5C8826A06910005A3102 /* LandingView.swift in Sources */,
 				E2DD5C8626A06910005A3102 /* IncrementApp.swift in Sources */,
@@ -315,6 +330,7 @@
 				E2DD5C9726A06D89005A3102 /* Color+Extension.swift in Sources */,
 				E2DD5CA426A07A20005A3102 /* CreateChallengeViewModel.swift in Sources */,
 				E203629826A5A87800AA4EEC /* UserService.swift in Sources */,
+				E243073126D8E7AF0075DE3A /* TabContainerView.swift in Sources */,
 				E2DD5CA126A077E7005A3102 /* RemindView.swift in Sources */,
 				E22B75F826A5C8050051BD63 /* ChallengeService.swift in Sources */,
 				E2DD5C9D26A07338005A3102 /* CreateView.swift in Sources */,
