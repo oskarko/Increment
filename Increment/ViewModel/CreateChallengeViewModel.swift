@@ -50,7 +50,7 @@ final class CreateChallengeViewModel: ObservableObject {
                         print("finished")
                     }
                 } receiveValue: { _ in
-                    print("seccess")
+                    print("success")
                 }.store(in: &cancellables)
         }
     }

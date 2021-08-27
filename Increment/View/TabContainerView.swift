@@ -30,9 +30,14 @@ struct TabContainerView: View {
     @ViewBuilder
     private func tabView(for tabItemType: TabItemViewModel.TabItemType) -> some View {
         switch tabItemType {
-        case .log: Text("Log")
-        case .challengeList: Text("Challenge List")
-        case .settings: Text("Settings")
+        case .log:
+            Text("Log")
+        case .challengeList:
+            NavigationView {
+                ChallengeListView()
+            }
+        case .settings:
+            Text("Settings")
         }
     }
 }
