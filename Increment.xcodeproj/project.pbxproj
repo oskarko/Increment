@@ -110,12 +110,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		E22B75F926A5CD250051BD63 /* Utils */ = {
+		E22B75F926A5CD250051BD63 /* Errors */ = {
 			isa = PBXGroup;
 			children = (
 				E22B75FA26A5CD370051BD63 /* IncrementError.swift */,
 			);
-			path = Utils;
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		E243297E26B0044700A1BFAA /* Publishers */ = {
@@ -156,7 +156,7 @@
 				E2DD5C9826A0728A005A3102 /* View */,
 				E2DD5C9B26A072B6005A3102 /* Style */,
 				E2DD5C9A26A072A0005A3102 /* Extension */,
-				E22B75F926A5CD250051BD63 /* Utils */,
+				E22B75F926A5CD250051BD63 /* Errors */,
 				E2DD5C8926A06912005A3102 /* Assets.xcassets */,
 				E2DD5C8E26A06912005A3102 /* Info.plist */,
 				E203629426A5A3ED00AA4EEC /* GoogleService-Info.plist */,

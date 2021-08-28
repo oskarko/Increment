@@ -34,6 +34,7 @@ struct CreateView: View {
                     }) {
                         Text("Next")
                             .font(.system(size: 24, weight: .medium))
+                            .foregroundColor(.primary)
                     }
 
             } // VStack
