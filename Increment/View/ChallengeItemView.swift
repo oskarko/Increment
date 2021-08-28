@@ -25,23 +25,41 @@ struct ChallengeItemView: View {
     
     // MARK: - Body
     
+    var titleRow: some View {
+        HStack {
+            Text(viewModel.title)
+                .font(.system(size: 24, weight: .bold))
+            Spacer()
+            Image(systemName: "trash")
+        }
+    }
+    
+    var dailyIncreaseText: some View {
+        HStack {
+            Text(viewModel.dailyIncreaseText)
+                .font(.system(size: 24, weight: .bold))
+            Spacer()
+        }
+    }
+    
     var body: some View {
         HStack {
             Spacer()
             VStack {
-                Text(viewModel.title)
-                    .font(.system(size: 24, weight: .bold))
+                titleRow
                 Text(viewModel.statusText)
-                Text(viewModel.dailyIncreaseText)
+                    .font(.system(size: 12, weight: .bold))
+                    .padding(25) //
+                dailyIncreaseText
             }
-            .padding()
+            .padding(.vertical, 10)
             Spacer()
         }
         .background(
             Rectangle()
-                .fill(Color.darkPrimary)
+                .fill(Color.primaryButton)
                 .cornerRadius(5)
-        ).padding()
+        )
     }
 }
 

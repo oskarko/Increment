@@ -17,19 +17,39 @@ struct ChallengeListView: View {
     // MARK: - Body
     
     var body: some View {
+        ZStack {
+            if viewModel.isLoading {
+                ProgressView()
+            } else if let error = viewModel.error {
+                VStack {
+                    Text(error.localizedDescription)
+                    Button("Retry") {
+                        viewModel.send(action: .retry)
+                    }
+                    .padding(10)
+                    .background(
+                        Rectangle()
+                            .fill(Color.red)
+                            .cornerRadius(5)
+                    )
+                } // VStack
+            } else {
+                mainContentView
+            }
+        } // ZStack
+    }
+    
+    var mainContentView: some View {
         ScrollView {
-            
             VStack {
-                
-                LazyVGrid(columns: [.init(.flexible()), .init(.flexible())]) {
+                LazyVGrid(columns: [.init(.flexible(), spacing: 20), .init(.flexible())], spacing: 20) {
                     ForEach(viewModel.itemViewModels, id: \.self) { viewModel in
                         ChallengeItemView(viewModel: viewModel)
                     }
                 } // LazyVGrid
                 Spacer()
-                
             } // VStack
-            
+            .padding(10)
         } // ScrollView
         .navigationTitle(viewModel.title)
     }
