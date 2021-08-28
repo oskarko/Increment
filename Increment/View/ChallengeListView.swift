@@ -13,6 +13,7 @@ struct ChallengeListView: View {
     
     // MARK: - Properties
     @StateObject private var viewModel = ChallengeListViewModel()
+    @AppStorage("isDarkMode") private var isDarkMode = false
     
     // MARK: - Body
     
@@ -55,6 +56,7 @@ struct ChallengeListView: View {
             NavigationView {
                 CreateView()
             }
+            .preferredColorScheme(isDarkMode ? .dark : .light)
         }
         .navigationBarItems(trailing: Button {
             viewModel.send(action: .create)
