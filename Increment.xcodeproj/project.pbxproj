@@ -23,6 +23,10 @@
 		E24307B626D94FA30075DE3A /* ChallengeItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24307B526D94FA30075DE3A /* ChallengeItemViewModel.swift */; };
 		E24307BA26D9556E0075DE3A /* ChallengeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24307B926D9556E0075DE3A /* ChallengeItemView.swift */; };
 		E243298026B0047A00A1BFAA /* AuthPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = E243297F26B0047A00A1BFAA /* AuthPublisher.swift */; };
+		E24981C126DC97D2007287EF /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24981C026DC97D2007287EF /* LandingViewModel.swift */; };
+		E24981C326DC9919007287EF /* LoginSignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24981C226DC9919007287EF /* LoginSignupView.swift */; };
+		E24981C526DC9949007287EF /* LoginSignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24981C426DC9949007287EF /* LoginSignupViewModel.swift */; };
+		E24981C826DCA03A007287EF /* TextFieldCustomRoundedStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24981C726DCA03A007287EF /* TextFieldCustomRoundedStyle.swift */; };
 		E2DD5C8626A06910005A3102 /* IncrementApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DD5C8526A06910005A3102 /* IncrementApp.swift */; };
 		E2DD5C8826A06910005A3102 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DD5C8726A06910005A3102 /* LandingView.swift */; };
 		E2DD5C8A26A06912005A3102 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2DD5C8926A06912005A3102 /* Assets.xcassets */; };
@@ -55,6 +59,10 @@
 		E24307B526D94FA30075DE3A /* ChallengeItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeItemViewModel.swift; sourceTree = "<group>"; };
 		E24307B926D9556E0075DE3A /* ChallengeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeItemView.swift; sourceTree = "<group>"; };
 		E243297F26B0047A00A1BFAA /* AuthPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPublisher.swift; sourceTree = "<group>"; };
+		E24981C026DC97D2007287EF /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
+		E24981C226DC9919007287EF /* LoginSignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupView.swift; sourceTree = "<group>"; };
+		E24981C426DC9949007287EF /* LoginSignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignupViewModel.swift; sourceTree = "<group>"; };
+		E24981C726DCA03A007287EF /* TextFieldCustomRoundedStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustomRoundedStyle.swift; sourceTree = "<group>"; };
 		E2DD5C8226A06910005A3102 /* Increment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Increment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2DD5C8526A06910005A3102 /* IncrementApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncrementApp.swift; sourceTree = "<group>"; };
 		E2DD5C8726A06910005A3102 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
@@ -133,6 +141,14 @@
 			path = Publishers;
 			sourceTree = "<group>";
 		};
+		E24981C626DCA027007287EF /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				E24981C726DCA03A007287EF /* TextFieldCustomRoundedStyle.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		E2DD5C7926A06910005A3102 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +170,7 @@
 		E2DD5C8426A06910005A3102 /* Increment */ = {
 			isa = PBXGroup;
 			children = (
+				E24981C626DCA027007287EF /* Modifiers */,
 				E243297E26B0044700A1BFAA /* Publishers */,
 				E22B75F426A5C7570051BD63 /* Models */,
 				E203629626A5A85200AA4EEC /* Services */,
@@ -190,6 +207,7 @@
 				E24307AF26D9186B0075DE3A /* ChallengeListView.swift */,
 				E24307B926D9556E0075DE3A /* ChallengeItemView.swift */,
 				E23D1CE126DADBB400A71A34 /* SettingsView.swift */,
+				E24981C226DC9919007287EF /* LoginSignupView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -227,6 +245,8 @@
 				E24307B526D94FA30075DE3A /* ChallengeItemViewModel.swift */,
 				E23D1CE326DADBC300A71A34 /* SettingsViewModel.swift */,
 				E23D1CE526DADC0D00A71A34 /* SettingsItemViewModel.swift */,
+				E24981C026DC97D2007287EF /* LandingViewModel.swift */,
+				E24981C426DC9949007287EF /* LoginSignupViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -349,12 +369,16 @@
 				E243298026B0047A00A1BFAA /* AuthPublisher.swift in Sources */,
 				E23D1CE626DADC0D00A71A34 /* SettingsItemViewModel.swift in Sources */,
 				E2DD5C9526A06D1A005A3102 /* PrimaryButtonStyle.swift in Sources */,
+				E24981C326DC9919007287EF /* LoginSignupView.swift in Sources */,
+				E24981C826DCA03A007287EF /* TextFieldCustomRoundedStyle.swift in Sources */,
 				E2DD5C8826A06910005A3102 /* LandingView.swift in Sources */,
+				E24981C526DC9949007287EF /* LoginSignupViewModel.swift in Sources */,
 				E2DD5C8626A06910005A3102 /* IncrementApp.swift in Sources */,
 				E2DD5CA626A07ADD005A3102 /* DropdownItemProtocol.swift in Sources */,
 				E22B75F626A5C7630051BD63 /* Challenge.swift in Sources */,
 				E2DD5C9726A06D89005A3102 /* Color+Extension.swift in Sources */,
 				E24307BA26D9556E0075DE3A /* ChallengeItemView.swift in Sources */,
+				E24981C126DC97D2007287EF /* LandingViewModel.swift in Sources */,
 				E24307B426D91A0D0075DE3A /* QuerySnapshotPublisher.swift in Sources */,
 				E2DD5CA426A07A20005A3102 /* CreateChallengeViewModel.swift in Sources */,
 				E203629826A5A87800AA4EEC /* UserService.swift in Sources */,
@@ -500,6 +524,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Increment/Preview Content\"";
 				DEVELOPMENT_TEAM = 934NVR3K3Z;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = Increment/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -523,6 +548,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Increment/Preview Content\"";
 				DEVELOPMENT_TEAM = 934NVR3K3Z;
 				ENABLE_PREVIEWS = YES;
+				EXCLUDED_ARCHS = "";
 				INFOPLIST_FILE = Increment/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (

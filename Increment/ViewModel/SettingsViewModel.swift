@@ -16,6 +16,7 @@ final class SettingsViewModel: ObservableObject {
     
     @AppStorage("isDarkMode") private var isDarkMode = false
     @Published private(set) var itemsViewModel: [SettingsItemViewModel] = []
+    @Published var loginSignupPushed = false
     let title = "Settings"
     
     // MARK: - Public Methods
@@ -26,6 +27,8 @@ final class SettingsViewModel: ObservableObject {
     
     func tappedItem(at index: Int) {
         switch itemsViewModel[index].type {
+            case .account:
+                loginSignupPushed = true
             case .mode:
                 isDarkMode.toggle()
                 buildItems()
