@@ -7,7 +7,8 @@
 //  Copyright © 2021 Oscar R. Garrucho. All rights reserved.
 //
 
-import Foundation
+import Combine
+import SwiftUI
 
 final class LoginSignupViewModel: ObservableObject {
     
@@ -17,6 +18,11 @@ final class LoginSignupViewModel: ObservableObject {
     @Published var emailText = ""
     @Published var passwordText = ""
     @Published var isValid = false
+    @Binding var isPushed: Bool
+    private let userService: UserServiceProtocol
+    private var cancellables: [AnyCancellable] = []
+    private(set) var emailPlaceholderText = "Email"
+    private(set) var passwordPlaceholderText = "Password"
     
     
     var title: String {
@@ -33,9 +39,6 @@ final class LoginSignupViewModel: ObservableObject {
         }
     }
     
-    var emailPlaceholder = "Email"
-    var passwordPlaceholder = "Password"
-    
     var buttonTitle: String {
         switch mode {
         case .login: return "Log in"
@@ -45,8 +48,33 @@ final class LoginSignupViewModel: ObservableObject {
     
     // MARK: - Lifecycle
     
-    init(mode: Mode) {
+    init(
+        mode: Mode,
+        userService: UserServiceProtocol = UserService(),
+        isPushed: Binding<Bool>
+    ) {
+        self.userService = userService
         self.mode = mode
+        self._isPushed = isPushed
+    }
+    
+    func tappedActionButton() {
+        switch mode {
+            case .login:
+                print("login")
+            case .signup:
+                userService.linkAccount(email: emailText, password: passwordText).sink { [weak self] completion in
+                    switch completion {
+                    case let .failure(error):
+                        print(error.localizedDescription)
+                    case .finished:
+                        print("linkAccount finished")
+                        self?.isPushed = false
+                    }
+                } receiveValue: { _ in }
+                .store(in: &cancellables)
+                
+        }
     }
     
 }

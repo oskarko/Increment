@@ -70,7 +70,12 @@ struct LandingView: View {
                         isActive: $viewModel.createPushed) {}
                     createButton
                     NavigationLink(
-                        destination: LoginSignupView(viewModel: .init(mode: .login)),
+                        destination: LoginSignupView(
+                            viewModel: .init(
+                                mode: .login,
+                                isPushed: $viewModel.loginSignupPushed
+                            )
+                        ),
                         isActive: $viewModel.loginSignupPushed) {}
                     loginButton
                 } // VStack
