@@ -18,6 +18,14 @@ final class SettingsViewModel: ObservableObject {
     @Published private(set) var itemsViewModel: [SettingsItemViewModel] = []
     @Published var loginSignupPushed = false
     let title = "Settings"
+    private let userService: UserServiceProtocol
+    private var cancellables: [AnyCancellable] = []
+    
+    // MARK: - Lifecycle
+    
+    init(userService: UserServiceProtocol = UserService()) {
+        self.userService = userService
+    }
     
     // MARK: - Public Methods
     
@@ -28,10 +36,22 @@ final class SettingsViewModel: ObservableObject {
     func tappedItem(at index: Int) {
         switch itemsViewModel[index].type {
             case .account:
+                guard userService.currentUser?.email == nil else { return }
                 loginSignupPushed = true
             case .mode:
                 isDarkMode.toggle()
                 buildItems()
+            case .logout:
+                userService.logout().sink { completion in
+                    switch completion {
+                    case let .failure(error):
+                        print(error.localizedDescription)
+                    case .finished:
+                        break
+                    }
+                } receiveValue: { _ in }
+                .store(in: &cancellables)
+
             default:
                 break
         }
@@ -45,9 +65,13 @@ final class SettingsViewModel: ObservableObject {
     
     private func buildItems() {
         itemsViewModel = [
-            .init(title: "Create account", iconName: "person.circle", type: .account),
+            .init(title: userService.currentUser?.email ?? "Create account", iconName: "person.circle", type: .account),
             .init(title: "Switch to \(isDarkMode ? "Light" : "Dark") Mode", iconName: "lightbulb", type: .mode),
             .init(title: "Privacy Policy", iconName: "shield", type: .privacy)
         ]
+        
+        if userService.currentUser?.email != nil {
+            itemsViewModel += [.init(title: "Logout", iconName: "arrowshape.turn.up.left", type: .logout)]
+        }
     }
 }
