@@ -44,7 +44,7 @@ struct ChallengeListView: View {
         ScrollView {
             VStack {
                 LazyVGrid(columns: [.init(.flexible(), spacing: 20), .init(.flexible())], spacing: 20) {
-                    ForEach(viewModel.itemViewModels, id: \.self) { viewModel in
+                    ForEach(viewModel.itemViewModels, id: \.id) { viewModel in
                         ChallengeItemView(viewModel: viewModel)
                     }
                 } // LazyVGrid

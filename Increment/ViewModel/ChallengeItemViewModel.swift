@@ -9,11 +9,15 @@
 
 import Foundation
 
-struct ChallengeItemViewModel: Hashable {
+struct ChallengeItemViewModel: Identifiable {
     
     // MARK: - Properties
     
     private let challenge: Challenge
+    
+    var id: String {
+        challenge.id!
+    }
     
     var title: String {
         challenge.exercise.capitalized
@@ -55,10 +59,21 @@ struct ChallengeItemViewModel: Hashable {
         "+\(challenge.increase) daily"
     }
     
+    private let onDelete: (String) -> Void
     
     // MARK: - Lifecycle
     
-    init(_ challenge: Challenge) {
+    init(
+        _ challenge: Challenge,
+        onDelete: @escaping (String) -> Void
+    ) {
         self.challenge = challenge
+        self.onDelete = onDelete
+    }
+    
+    func deleteTapped() {
+        if let id = challenge.id {
+            onDelete(id)
+        }
     }
 }
