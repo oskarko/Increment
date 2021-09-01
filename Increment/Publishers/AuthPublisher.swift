@@ -10,7 +10,6 @@
 import Combine
 import FirebaseAuth
 
-
 extension Publishers {
     struct AuthPublisher: Publisher {
         typealias Output = User?
@@ -40,7 +39,6 @@ extension Publishers {
             subscriber = nil
             handler = nil
         }
-        
-        
     }
+    
 }
