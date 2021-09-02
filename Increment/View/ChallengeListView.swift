@@ -36,6 +36,13 @@ struct ChallengeListView: View {
                 } // VStack
             } else {
                 mainContentView
+                    .onReceive(
+                        NotificationCenter
+                            .default
+                            .publisher(for: UIApplication.significantTimeChangeNotification)
+                    ) { _ in
+                        viewModel.send(action: .timeChange)
+                    }
             }
         } // ZStack
     }

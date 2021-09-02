@@ -65,12 +65,22 @@ final class CreateChallengeViewModel: ObservableObject {
             return Fail(error: .default(description: "Parsing error")).eraseToAnyPublisher()
         }
         
+        let startDate = Calendar.current.startOfDay(for: Date())
+        
         let challenge = Challenge(exercise: exercise,
                                   startAmount: startAmount,
                                   increase: increase,
                                   length: length,
                                   userId: userId,
-                                  startDate: Date())
+                                  startDate: startDate,
+                                  activities: (0..<length).compactMap { dayNum in
+                                    if let dayForDayNum = Calendar.current.date(byAdding: .day, value: dayNum, to: startDate) {
+                                        return .init(date: dayForDayNum, isCompleted: false)
+                                    } else {
+                                        return nil
+                                    }
+                                  }
+        )
         
         return challengeService.create(challenge).eraseToAnyPublisher()
     }

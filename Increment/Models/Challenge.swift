@@ -18,4 +18,10 @@ struct Challenge: Codable {
     let length: Int
     let userId: String
     let startDate: Date
+    let activities: [Activity]
+}
+
+struct Activity: Codable {
+    let date: Date
+    let isCompleted: Bool
 }
